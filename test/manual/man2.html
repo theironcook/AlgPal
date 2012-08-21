@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Manual Tester 2</title>
+
+    <script type="text/javascript" src="../../lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../lib/underscore/underscore.js"></script>
+    <script type="text/javascript" src="../../lib/backbone/backbone.js"></script>
+    <script type="text/javascript" src="../../lib/xml2json.js"></script>
+
+    <script type="text/javascript">
+        $().ready(function () {
+            $('#convertButton').on('click', function(){
+                var mathMl = $('[name=mathMLInput]').val();
+
+                var jsonObj = x2js.xml_str2json(mathMl);
+
+                console.log(jsonObj);
+            });
+        });
+
+
+
+
+        var makeApply = function(operator){
+            var terms = _.toArray(arguments);
+            terms.shift();
+
+            var apply = function(){
+
+            };
+
+            apply.toString = function(){
+                return 'apply: ' + operator.toString() + ' terms: ' +
+                        _.reduce(terms, function(memo, term){return memo + (memo ? ', ' : '') + term.toString()}, '');
+            };
+
+            return apply;
+        };
+
+        var makeOperator = function(operator){
+            var multiply = {
+                operator: operator
+            };
+
+            multiply.toString = function(){
+                return this.operator;
+            }
+
+            return multiply;
+        };
+
+        var makeVariable = function(name){
+            var variable = {
+                name: name
+            };
+
+            variable.toString = function(){
+                return name;
+            };
+
+            return variable;
+        };
+
+        var input = '3*X';
+
+
+        var equation = makeApply(makeOperator('*'), '3', makeVariable('X'));
+
+        console.log(equation);
+
+
+    </script>
+</head>
+<body>
+
+    Content Math ML:<br>
+    <textarea name="mathMLInput" rows="7" cols="80">
+        <math>
+            <apply>
+                <plus/>
+                <apply>
+                    <times/>
+                    <ci>a</ci>
+                    <apply>
+                        <power/>
+                        <ci>x</ci>
+                        <cn>2</cn>
+                    </apply>
+                </apply>
+                <apply>
+                    <times/>
+                    <ci>b</ci>
+                    <ci>x</ci>
+                </apply>
+                <ci>c</ci>
+            </apply>
+        </math>
+    </textarea>
+
+    <br>
+    <button id="convertButton">Convert</button>
+
+    <br><br>
+    Converted JSON:<br>
+    <textarea name="convertedJSON" rows="7" cols="80">
+    </textarea>
+</body>
+</html>
