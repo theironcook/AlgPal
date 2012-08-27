@@ -1,5 +1,5 @@
 
-/* description: Parses end executes mathematical expressions. */
+/* description: Parses simple algebraic equations into AlgPal structures */
 
 /* lexical grammar */
 %lex
@@ -12,8 +12,6 @@
 "-"                   return '-'
 "+"                   return '+'
 "^"                   return '^'
-"!"                   return '!'
-"%"                   return '%'
 "("                   return '('
 ")"                   return ')'
 "PI"                  return 'PI'
@@ -31,8 +29,6 @@
 %left '+' '-'
 %left '*' '/'
 %left '^'
-%right '!'
-%right '%'
 %left UMINUS
 
 %start expressions
@@ -41,8 +37,7 @@
 
 expressions
     : e EOF
-        { typeof console !== 'undefined' ? console.log($1) : print($1);
-          return $1; }
+        { return $1; }
     ;
 
 e
@@ -58,12 +53,6 @@ e
         {$$ = AlgPal.domain.Divide.Create($1, $3);}
     | e '^' e
         {$$ = AlgPal.domain.Power.Create($1, $3);}
-    | e '!'
-        {{
-          $$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($1);
-        }}
-    | e '%'
-        {$$ = $1/100;}
     | '-' e %prec UMINUS
         {$$ = -$2;}
     | '(' e ')'

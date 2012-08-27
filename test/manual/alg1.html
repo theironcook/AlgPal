@@ -35,11 +35,14 @@
 //            var input = '(2/(x-4))*((x+1)/(x+1))+(x/(x+1))*((x-4)/(x-4))=1';
             var input = '(x^2-2*x+2)/((x+1)*(x-4))=1';
 
+            console.log('input is ', input);
+
             var equation = AlgPal.parser.StringToEquation(input);
             console.log('equation is ', equation);
 
             var string = AlgPal.parser.EquationToString(equation);
-            console.log('string is ', string);
+            console.log('string is ', string, string === input);
+
         });
 
     </script>
