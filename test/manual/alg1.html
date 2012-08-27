@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta content="text/html;charset=UTF-8" http-equiv="Content-Type"/>
+    <title>Example 1</title>
+
+    <!-- include source files here... -->
+    <script type="text/javascript" src="../../lib/underscore/underscore.js"></script>
+    <script type="text/javascript" src="../../lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../../lib/backbone/backbone.js"></script>
+
+    <script type="text/javascript" src="../../src/util/Utils.js"></script>
+
+
+    <script type="text/javascript" src="../../src/domain/Equation.js"></script>
+    <script type="text/javascript" src="../../src/domain/Term.js"></script>
+    <script type="text/javascript" src="../../src/domain/Group.js"></script>
+    <script type="text/javascript" src="../../src/domain/Variable.js"></script>
+    <script type="text/javascript" src="../../src/domain/Group.js"></script>
+    <script type="text/javascript" src="../../src/domain/Number.js"></script>
+    <script type="text/javascript" src="../../src/domain/Operator.js"></script>
+    <script type="text/javascript" src="../../src/domain/Plus.js"></script>
+    <script type="text/javascript" src="../../src/domain/Multiply.js"></script>
+
+    <script type="text/javascript" src="../../../jison/examples/algpal.js"></script>
+
+    <script>
+        $().ready(function () {
+            var results = algpal.parse('X+(3*4)=5');
+            console.log('results are ', results);
+
+
+        });
+
+    </script>
+
+</head>
+<body>
+<br>
+Hello
+</body>
+</html>
