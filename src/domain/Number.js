@@ -3,6 +3,10 @@ GetContext('AlgPal.domain').Number = AlgPal.domain.Term.extend({
 
     initialize: function(){
         AlgPal.domain.Term.prototype.initialize.call(this);
+    },
+
+    toString: function(){
+        return this.get('value');
     }
 
 },

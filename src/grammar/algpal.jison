@@ -57,7 +57,7 @@ e
     | e '/' e
         {$$ = AlgPal.domain.Divide.Create($1, $3);}
     | e '^' e
-        {$$ = Math.pow($1, $3);}
+        {$$ = AlgPal.domain.Power.Create($1, $3);}
     | e '!'
         {{
           $$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($1);

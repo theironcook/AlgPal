@@ -19,17 +19,27 @@
     <script type="text/javascript" src="../../src/domain/Group.js"></script>
     <script type="text/javascript" src="../../src/domain/Number.js"></script>
     <script type="text/javascript" src="../../src/domain/Operator.js"></script>
+    <script type="text/javascript" src="../../src/domain/BinaryOperator.js"></script>
     <script type="text/javascript" src="../../src/domain/Plus.js"></script>
+    <script type="text/javascript" src="../../src/domain/Minus.js"></script>
     <script type="text/javascript" src="../../src/domain/Multiply.js"></script>
+    <script type="text/javascript" src="../../src/domain/Divide.js"></script>
+    <script type="text/javascript" src="../../src/domain/Power.js"></script>
+    <script type="text/javascript" src="../../src/grammar/algpal.js"></script>
+    <script type="text/javascript" src="../../src/util/Parser.js"></script>
 
-    <script type="text/javascript" src="../../../jison/examples/algpal.js"></script>
 
     <script>
         $().ready(function () {
-            var results = algpal.parse('X+(3*4)=5');
-            console.log('results are ', results);
+//            var input = 'X+(3*(8/y))=5';
+//            var input = '(2/(x-4))*((x+1)/(x+1))+(x/(x+1))*((x-4)/(x-4))=1';
+            var input = '(x^2-2*x+2)/((x+1)*(x-4))=1';
 
+            var equation = AlgPal.parser.StringToEquation(input);
+            console.log('equation is ', equation);
 
+            var string = AlgPal.parser.EquationToString(equation);
+            console.log('string is ', string);
         });
 
     </script>

@@ -1,6 +1,9 @@
 
 GetContext('AlgPal.domain').Equation = Backbone.Model.extend({
 
+    toString: function(){
+        return this.get('left').toString() + '=' + this.get('right').toString();
+    }
 
 },
 {

@@ -22,7 +22,7 @@ case 5:this.$ = AlgPal.domain.Multiply.Create($$[$0-2], $$[$0]);
 break;
 case 6:this.$ = AlgPal.domain.Divide.Create($$[$0-2], $$[$0]);
 break;
-case 7:this.$ = Math.pow($$[$0-2], $$[$0]);
+case 7:this.$ = AlgPal.domain.Power.Create($$[$0-2], $$[$0]);
 break;
 case 8:
           this.$ = (function fact (n) { return n==0 ? 1 : fact(n-1) * n })($$[$0-1]);
