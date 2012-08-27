@@ -37,10 +37,10 @@
 
             console.log('input is ', input);
 
-            var equation = AlgPal.parser.StringToEquation(input);
+            var equation = AlgPal.StringToEquation(input);
             console.log('equation is ', equation);
 
-            var string = AlgPal.parser.EquationToString(equation);
+            var string = AlgPal.EquationToString(equation);
             console.log('string is ', string, string === input);
 
         });

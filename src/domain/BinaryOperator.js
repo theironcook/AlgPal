@@ -3,7 +3,7 @@ GetContext('AlgPal.domain').BinaryOperator = AlgPal.domain.Term.extend({
 
     initialize: function(){
         AlgPal.domain.Operator.prototype.initialize.call(this);
-        AlgPal.utils.Assert(this.get('symbol'), 'Symbol must be defined');
+        AlgPal.Assert(this.get('symbol'), 'Symbol must be defined');
     },
 
     toString: function(){

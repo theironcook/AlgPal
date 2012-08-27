@@ -18,22 +18,21 @@ GetContext = function(path){
 
 
 // create default namespace for utils
-GetContext('AlgPal.utils');
+GetContext('AlgPal');
 GetContext('AlgPal.domain');
 
 
 // Temporary cheats to make working with the debugger easier when creating types
-window.U = AlgPal.utils;
 window.D = AlgPal.domain;
 
 
-AlgPal.utils.Assert = function(condition, message){
+AlgPal.Assert = function(condition, message){
     if(!condition){
         throw message;
     }
 };
 
 
-AlgPal.utils.IsType = function(obj, type){
+AlgPal.IsType = function(obj, type){
     return obj instanceof type;
 };

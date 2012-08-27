@@ -3,7 +3,7 @@ GetContext('AlgPal.domain').Operator = AlgPal.domain.Term.extend({
 
     initialize: function(){
         AlgPal.domain.Term.prototype.initialize.call(this);
-        AlgPal.utils.Assert(this.get('type'), 'Type must be defined');
+        AlgPal.Assert(this.get('type'), 'Type must be defined');
     },
 
     toString: function(){
