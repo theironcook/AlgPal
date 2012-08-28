@@ -33,14 +33,15 @@
         $().ready(function () {
 //            var input = 'X+(3*(8/y))=5';
 //            var input = '(2/(x-4))*((x+1)/(x+1))+(x/(x+1))*((x-4)/(x-4))=1';
-            var input = '(x^2-2*x+2)/((x+1)*(x-4))=1';
+//            var input = '(x^2-2*x+2)/((x+1)*(x-4))=1';
+            var input = '3.8=4.2';
 
             console.log('input is ', input);
 
-            var equation = AlgPal.StringToEquation(input);
-            console.log('equation is ', equation);
+            eq = AlgPal.StringToEquation(input);
+            console.log('equation is ', eq);
 
-            var string = AlgPal.EquationToString(equation);
+            var string = AlgPal.EquationToString(eq);
             console.log('string is ', string, string === input);
 
         });
@@ -50,6 +51,6 @@
 </head>
 <body>
 <br>
-Hello
+To check in chrome, hit F12 and look at the console tab...
 </body>
 </html>
